@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>simple calculator</title>
+</head>
+
+<body>
+    <h2>simple calculator</h2>
+
+    <div>
+        <label for="num1">Num 1:</label>
+        <input type="number" id="num1">
+        <br><br>
+
+        <label for="num2">Num 2:</label>
+        <input type="number" id="num2">
+        <br><br>
+
+        <label for="operation">operation</label>
+        <select id="operation">
+            <option value="">select</option>
+            <option value="add">Addition</option>
+            <option value="subtract">subtraction</option>
+            <option value="multiply">mutiplication</option>
+            <option value="divide">division</option>
+        </select>
+        <br><br>
+
+        <button onclick="calculate()">calculate</button>
+
+        <p id="result"></p>
+    </div>
+
+    <script>
+        function calculate() {
+            let num1 = Number(document.getElementById("num1").value)
+            let num2 = Number(document.getElementById("num2").value)
+            let operation = document.getElementById("operation").value
+            let result;
+
+            switch (operation) {
+                case 'add':
+                    result = num1 + num2;
+                    break;
+
+                case 'subtract':
+                    result = num1 - num2;
+                    break;
+
+                case 'multiply':
+                    result = num1 * num2;
+                    break;
+
+                case 'divide':
+                    result = num1 / num2;
+                    break;
+                default:
+                    ("invalid")
+            }
+            document.getElementById("result").innerHTML = `result:${result}`
+        }
+    </script>
+</body>
+
+</html>
